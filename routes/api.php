@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\RegisterUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -9,10 +10,6 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'auth'], function() {
-
-});
-
-Route::post('/auth/teste', [RegisterController::class, 'teste']);
-
-Route::post('/auth/register', [RegisterController::class, 'store'])
+    Route::post('/register', RegisterUserController::class)
                 ->middleware('guest');
+});

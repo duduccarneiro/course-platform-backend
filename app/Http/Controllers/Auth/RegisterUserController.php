@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Actions\Auth\RegisterUserAction;
 use App\Data\Auth\RegisterUserData;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 
 class RegisterUserController extends Controller
 {
@@ -12,6 +13,6 @@ class RegisterUserController extends Controller
     {
         $user = RegisterUserAction::run($data);
 
-        return response()->json($user, 201);
+        return new UserResource($user);
     }
 }
