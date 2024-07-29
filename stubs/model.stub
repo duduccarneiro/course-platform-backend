@@ -1,0 +1,13 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use App\Traits\WithHashId;
+
+class {{ class }} extends Model
+{
+    use HasFactory;
+    use WithHashId;
+}
