@@ -18,5 +18,6 @@ Route::group(['prefix' => 'auth'], function() {
 
     Route::middleware('auth:sanctum')->group(function() {
         Route::get('/me', [MeController::class, '__invoke']);
+        Route::post('/logout', [LoginController::class, 'destroy']);
     });
 });

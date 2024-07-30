@@ -25,4 +25,12 @@ class LoginController extends Controller
             'token_type' => 'Bearer'
         ])->cookie($cookie);
     }
+
+    public function destroy(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return response(null, 204)
+            ->withoutCookie(config('site.cookie_name'));
+    }
 }
