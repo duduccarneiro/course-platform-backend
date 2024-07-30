@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\RegisterUserController;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'auth'], function() {
-    Route::post('/register', RegisterUserController::class)
-                ->middleware('guest');
+    Route::post('/register', RegisterUserController::class);
+
+    Route::post('/token', [LoginController::class, 'store']);
 });
