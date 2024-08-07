@@ -6,11 +6,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "akaunting/laravel-money": "^5.2",
+        "cviebrock/eloquent-sluggable": "^11.0",
         "hashids/hashids": "*",
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "spatie/laravel-data": "^4.7",
+        "spatie/laravel-medialibrary": "^11.8",
         "staudenmeir/laravel-adjacency-list": "^1.0"
     },
     "require-dev": {

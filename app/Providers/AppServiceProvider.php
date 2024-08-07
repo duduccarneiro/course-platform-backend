@@ -2,14 +2,17 @@
 
 namespace App\Providers;
 
-use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Auth\Notifications\ResetPassword;
-use Illuminate\Auth\Notifications\VerifyEmail;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\ServiceProvider;
+use App\Models\User;
+use App\Models\Course;
 use Illuminate\Support\Str;
+use App\Policies\CoursePolicy;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Auth\Notifications\ResetPassword;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class AppServiceProvider extends ServiceProvider
 {

@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'cookie_name' => 'XXSRF-TOKEN'
+    'cookie_name' => 'XXSRF-TOKEN',
+    'currency' => 'usd'
 ];

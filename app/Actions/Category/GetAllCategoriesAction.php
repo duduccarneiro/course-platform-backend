@@ -4,7 +4,7 @@ namespace App\Actions\Category;
 
 use App\Models\Category;
 
-class GetAllCategories
+class GetAllCategoriesAction
 {
     public static function run()
     {
