@@ -62,6 +62,25 @@ return [
             'url' => env('APP_URL') . '/storage/media/covers'
         ],
 
+        'temp' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/temp'),
+            'visibility' => 'public'
+        ],
+
+        'digitalocean' => [
+            'driver' => 's3',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION'),
+            'bucket' => env('AWS_BUCKET'),
+            'url' => env('AWS_URL'),
+            //'cdn_endpoint' => env('AWS_ENDPOINT'),
+            'endpoint' => env('AWS_ENDPOINT'),
+            'disable_asserts' => true,
+            'visibility' => 'public',
+        ]
+
     ],
 
     /*

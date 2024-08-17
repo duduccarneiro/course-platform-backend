@@ -7,6 +7,7 @@ use App\Traits\WithHashId;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Lecture extends Model
 {
@@ -36,5 +37,10 @@ class Lecture extends Model
     public function section() : BelongsTo
     {
         return $this->belongsTo(Section::class);
+    }
+
+    public function video() : HasOne
+    {
+        return $this->hasOne(Video::class);
     }
 }
